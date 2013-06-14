@@ -4,9 +4,7 @@ $:.unshift File.dirname(__FILE__) # For use/testing when no gem is installed
 require 'net/http'
 require 'cgi'
 require 'date'
-
-# gems
-require 'multi_json'
+require 'json'
 
 # internal
 require 'nestling/version'

@@ -35,7 +35,7 @@ module Nestling
     def get(meth, params = {})
       path = "/api/v4/#{meth}?" << convert_params(params)
       response = @http.get(path, {'User-Agent' => USER_AGENT})
-      hash = MultiJson.load(response.body)
+      hash = JSON.parse(response.body)
 
       if (code = hash["response"]["status"]["code"].to_i) != 0
         raise ERRNO[code], hash["response"]["status"]["message"]
